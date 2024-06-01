@@ -19,8 +19,8 @@ export const Header = () => {
   }
 
   return (
-    <header className="flex justify-between items-center p-4 border-b">
-      <div className="flex gap-2 items-center">
+    <header className="flex justify-between items-center p-4 border-b-2 border-black">
+      <div className="flex gap-2 items-center w-[400px]">
         <Link to="/">
           <div className="font-semibold text-lg">pinjambuku.</div>
         </Link>
@@ -33,7 +33,9 @@ export const Header = () => {
       {user ? (
         <div className="flex items-center gap-4">
           <Link to="/dashboard">
-            <Button>Dashboard</Button>
+            <Button className="w-full h-12 items-center justify-center overflow-hidden rounded-md border-2 border-black bg-purple-500 px-6 font-medium text-black hover:text-white transition-all duration-100 [box-shadow:5px_5px_black] hover:translate-x-[3px] hover:translate-y-[3px] hover:[box-shadow:0px_0px_black]">
+              Dashboard
+            </Button>
           </Link>
           <div>{user.name}</div>
           <Avatar
@@ -46,10 +48,14 @@ export const Header = () => {
       ) : (
         <div className="flex items-center gap-4">
           <Link to="/login">
-            <div>Login</div>
+            <Button className="w-full h-12 items-center justify-center overflow-hidden rounded-md border-2 border-black bg-pink-500 px-6 font-medium text-black hover:text-white transition-all duration-100 [box-shadow:5px_5px_black] hover:translate-x-[3px] hover:translate-y-[3px] hover:[box-shadow:0px_0px_black]">
+              Login
+            </Button>
           </Link>
           <Link to="/register">
-            <Button>Get started</Button>
+            <Button className="w-fit h-12 items-center justify-center overflow-hidden rounded-md border-2 border-black bg-blue-500 px-6 font-medium text-black hover:text-white transition-all duration-100 [box-shadow:5px_5px_black] hover:translate-x-[3px] hover:translate-y-[3px] hover:[box-shadow:0px_0px_black]">
+              Get Started
+            </Button>
           </Link>
         </div>
       )}

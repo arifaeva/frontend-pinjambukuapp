@@ -83,6 +83,6 @@
     @apply font-medium;
   }
   p {
-    @apply text-sm text-slate-500;
+    @apply text-sm text-slate-700;
   }
 }

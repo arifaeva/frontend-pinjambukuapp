@@ -27,7 +27,7 @@ export const bookServices = {
     formData.append("author", author);
     formData.append("file", file[0]);
 
-    const res = await fetch("http://localhost:8000/books", {
+    const res = await fetch("http://localhost:3000/books", {
       method: "POST",
       // headers: { "Content-Type": "application/json" },
       // body: JSON.stringify({ name, description, isbn, author }),

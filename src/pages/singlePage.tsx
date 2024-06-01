@@ -30,10 +30,10 @@ export default function SinglePage() {
   console.log(query.data?.isAvailable);
 
   return (
-    <main className="space-y-12">
+    <main className="space-y-12 bg-yellow-100 pb-12 h-full">
       <Header />
-      <section className="grid grid-cols-2 gap-8 max-w-5xl m-auto">
-        <div>
+      <section className="grid grid-cols-2 max-w-5xl m-auto bg-pink-500 p-8 rounded-xl [box-shadow:8px_8px_black] border-black border-2">
+        <div className="w-[350px]">
           <img
             src={`${API_URL}/${query.data?.file}`}
             width={800}
@@ -41,16 +41,21 @@ export default function SinglePage() {
             className="rounded-lg"
           />
         </div>
-        <div className="space-y-4">
+        <div className="space-y-4 bg-yellow-100 rounded-xl p-6 border-black border-2">
           <h1>{query.data?.name}</h1>
           <p>{query.data?.author}</p>
           <p>{query.data?.isbn}</p>
           <p className="whitespace-pre-line">{query.data?.description}</p>
           {query.data?.isAvailable === true ||
           query.data?.isAvailable === undefined ? (
-            <Button onClick={() => handlePinjamBuku()}>Pinjam Buku</Button>
+            <Button
+              className="w-fit h-12 items-center justify-center overflow-hidden rounded-md border-2 border-black bg-blue-500 px-6 font-medium text-black hover:text-white transition-all duration-100 [box-shadow:5px_5px_black] hover:translate-x-[3px] hover:translate-y-[3px] hover:[box-shadow:0px_0px_black]"
+              onClick={() => handlePinjamBuku()}
+            >
+              Borrow book
+            </Button>
           ) : (
-            <Button disabled>Buku sudah dipinjam</Button>
+            <Button disabled>Book has ben borrowed</Button>
           )}
         </div>
       </section>

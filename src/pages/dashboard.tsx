@@ -19,13 +19,13 @@ export default function Dashboard() {
   }, [searchParams]);
 
   return (
-    <main className="space-y-12">
+    <main className="space-y-12 bg-yellow-100 pb-6">
       <Header />
       <ImportBook />
-      {query.data?.length === 0 ? <div>Gak ada data</div> : null}
+      {query.data?.length === 0 ? <div>No data available</div> : null}
       {query.isLoading ? <div>Loading...</div> : null}
       {query.isError ? (
-        <div>Error nih!</div>
+        <div>Error load data!</div>
       ) : (
         <section className="grid grid-cols-4 gap-4 max-w-5xl m-auto">
           {query.data?.map((book) => {

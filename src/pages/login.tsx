@@ -12,8 +12,8 @@ export default function Login() {
 
   const { handleLogin } = useAuth(user);
   return (
-    <main className="h-screen flex justify-center items-center">
-      <div className="w-[320px] space-y-2">
+    <main className="h-screen flex justify-center items-center bg-yellow-100">
+      <div className="w-[320px] space-y-2 bg-purple-500 p-5 rounded-lg [box-shadow:5px_5px_black] border-2 border-black">
         <section>
           <h2>Login</h2>
           <p>Welcome back!</p>
@@ -26,7 +26,10 @@ export default function Login() {
           placeholder="Password"
           onChange={(e) => setUser({ ...user, password: e.target.value })}
         />
-        <Button className="w-full" onClick={handleLogin}>
+        <Button
+          className="w-full h-12 items-center justify-center overflow-hidden rounded-md border-2 border-black bg-pink-500 px-6 font-medium text-black hover:text-white transition-all duration-100 [box-shadow:5px_5px_black] hover:translate-x-[3px] hover:translate-y-[3px] hover:[box-shadow:0px_0px_black]"
+          onClick={handleLogin}
+        >
           Login
         </Button>
         <section>

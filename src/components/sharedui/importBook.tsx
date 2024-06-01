@@ -36,7 +36,7 @@ export const ImportBook = () => {
     mutationFn: bookServices.createData,
     onSuccess: () => {
       queryClient.invalidateQueries();
-      toast.success("Buku berhasil ditambahkan!");
+      toast.success("A new book has been added!");
       setBook(initialBookVal);
     },
     onError: (error: { message: string }) => {
@@ -46,8 +46,8 @@ export const ImportBook = () => {
 
   return (
     <div className="flex justify-center my-20">
-      <main className="w-[400px] space-y-4">
-        <h1 className="text-xl font-bold">Books</h1>
+      <main className="w-[400px] space-y-4 bg-purple-500 p-5 rounded-lg [box-shadow:5px_5px_black] border-black border-2">
+        <h1 className="text-xl font-bold">Add Book to Catalog</h1>
         <section className="space-y-2">
           <Input
             value={book.name}
@@ -76,6 +76,7 @@ export const ImportBook = () => {
             }
           />
           <Button
+            className="w-full h-12 items-center justify-center overflow-hidden rounded-md border-2 border-black bg-yellow-400 px-6 font-medium text-black hover:text-white transition-all duration-100 [box-shadow:5px_5px_black] hover:translate-x-[3px] hover:translate-y-[3px] hover:[box-shadow:0px_0px_black]"
             onClick={() => {
               handleAddBook(book);
             }}

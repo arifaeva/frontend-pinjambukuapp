@@ -18,7 +18,7 @@ export default function Home() {
   }, [searchParams]);
 
   return (
-    <main className="space-y-12">
+    <main className="space-y-12 bg-yellow-100 pb-6">
       <Header />
       <section className="grid grid-cols-4 gap-4 max-w-5xl m-auto">
         {query.data?.map((book) => {
