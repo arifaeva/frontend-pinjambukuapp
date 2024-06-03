@@ -51,7 +51,7 @@ export const ImportBook = () => {
         <section className="space-y-2">
           <Input
             value={book.name}
-            placeholder="name"
+            placeholder="title"
             onChange={(e) => setBook({ ...book, name: e.target.value })}
           />
           <Input
